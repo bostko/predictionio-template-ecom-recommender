@@ -73,7 +73,7 @@ class DataSource(val dsp: DataSourceParams)
           ViewEvent(
             user = event.entityId,
             item = event.targetEntityId.get,
-            t = event.eventTime.getMillis
+            t = event.eventTime.toEpochMilli
           )
         } catch {
           case e: Exception =>
@@ -90,7 +90,7 @@ class DataSource(val dsp: DataSourceParams)
           BuyEvent(
             user = event.entityId,
             item = event.targetEntityId.get,
-            t = event.eventTime.getMillis
+            t = event.eventTime.toEpochMilli
           )
         } catch {
           case e: Exception =>
